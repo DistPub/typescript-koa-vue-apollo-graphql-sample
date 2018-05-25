@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2017",
+    "outDir": "../server_dist",
+    "lib": [
+      "es2017",
+      "esnext.asynciterable"
+    ]
+  },
+  "include": [
+    "./**/*"
+  ]
+}

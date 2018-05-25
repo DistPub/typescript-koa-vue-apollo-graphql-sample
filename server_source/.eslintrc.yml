@@ -1,0 +1,4 @@
+extends: eslint-config-alloy
+env:
+  node: true
+parser: typescript-eslint-parser
