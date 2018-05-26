@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "server": "node ./server_dist/app.js",
-    "dev-server": "npx nodemon -w server_source/**/* -e ts -x 'npx ts-node -P ./server_source/tsconfig.json ./server_source/app.ts'",
+    "server": "node ./server_dist/index.js",
+    "dev-server": "npx nodemon -w server_source/**/* -e ts -x 'npx ts-node -P ./server_source/tsconfig.json ./server_source/index.ts'",
     "dev-client": "npx webpack --watch --progress --log-time",
+    "dev": "npx nodemon -w server_source/**/* -e ts -x 'npx ts-node -P ./server_source/tsconfig.json ./server_source/index.ts --hot'",
     "build-server": "npx tsc -p ./server_source/tsconfig.json",
     "build-client": "npx webpack --progress --log-time"
   },
@@ -48,6 +49,7 @@
     "html-webpack-plugin": "^3.2.0",
     "imagemin": "^5.3.1",
     "img-loader": "^3.0.0",
+    "koa-webpack": "^4.0.0",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
     "nodemon": "^1.17.5",
@@ -63,6 +65,8 @@
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.8.3",
-    "webpack-command": "^0.2.0"
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-middleware": "^3.1.3",
+    "webpack-hot-client": "^3.0.0"
   }
 }

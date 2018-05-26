@@ -8,7 +8,7 @@ module.exports = {
     mode: 'development',
     devtool: '#eval-source-map',
     entry: {
-        index: './client_source/index.ts',
+        index: ['./client_source/index.ts'],
     },
     output: {
         path: path.resolve(__dirname, './client_dist'),

@@ -3,7 +3,6 @@ import * as KoaRouter from 'koa-router';
 import * as KoaBody from 'koa-bodyparser';
 import { graphqlKoa, graphiqlKoa } from 'apollo-server-koa';
 import { makeExecutableSchema } from 'graphql-tools';
-import { ApolloEngine } from 'apollo-engine';
 import Axios from 'axios';
 import * as KoaServe from 'koa-static';
 import * as KoaMount from 'koa-mount';
@@ -11,11 +10,6 @@ import * as path from 'path';
 
 const app = new Koa();
 const router = new KoaRouter();
-const engine = new ApolloEngine({
-    reporting: {
-        disabled: true,
-    },
-});
 
 // The GraphQL schema in string form
 const typeDefines = `
@@ -103,7 +97,4 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 app.use(KoaMount('/', KoaServe(path.resolve(__dirname, '../client_dist'))));
 
-engine.listen({
-    port: 3000,
-    koaApp: app,
-});
+export default app;
