@@ -18,7 +18,7 @@ download node@8.11.2 binary to your computer and add bin path to your environmen
 
 `cnpm run build-client && cnpm run build-server && cnpm run server`
 
->also support `dev-client` `dev-server` command to use in develop progress
+>also support `dev-client` `dev-server` command to use in develop progress, and magic HMR with `dev` command
 
 ### FQA
 
