@@ -4,7 +4,7 @@
         <button @click="decrement">-</button>
         <button @click="increment">+</button>
         <h1>GraphQL</h1>
-        <textarea>{{result}}</textarea>
+        <textarea>{{users}}</textarea>
     </div>
 </template>
 
@@ -19,11 +19,11 @@ export default Vue.extend({
     data() {
         return {
             enthusiasm: this.initialEnthusiasm,
-            result: '',
+            users: '',
         };
     },
     apollo: {
-        result: {
+        users: {
             query: AllUsers
         }
     },

@@ -1,3 +1,5 @@
-query users {
-	name
+query {
+    users {
+        name
+    }
 }

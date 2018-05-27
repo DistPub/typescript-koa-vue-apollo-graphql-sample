@@ -18,9 +18,11 @@ const apolloClient = new ApolloClient({
     connectToDevTools: process.env.NODE_ENV !== 'production',
 });
 
-Vue.use(VueApollo, {
-    apolloClient,
+const apolloProvider = new VueApollo({
+    defaultClient: apolloClient,
 });
+
+Vue.use(VueApollo);
 
 let app = new Vue({
     el: '#app',
@@ -37,6 +39,7 @@ let app = new Vue({
     </div>
     `,
     data: { name: 'World', visible: false },
+    provide: apolloProvider.provide(),
     components: {
         HelloComponent,
         elButton: Button,
