@@ -93,6 +93,7 @@ module.exports = {
         }),
     ],
     resolve: {
+        extensions: ['.ts', '.js', '.json'],
         modules: [
             'node_modules',
             'node_modules/vue-style-loader/lib',
