@@ -6,7 +6,7 @@
     "server": "node ./server_dist/index.js",
     "dev-server": "npx nodemon -w server_source/**/* -e ts -x 'npx ts-node -P ./server_source/tsconfig.json ./server_source/index.ts'",
     "dev-client": "npx webpack --watch --progress --log-time",
-    "dev": "npx nodemon -w server_source/**/* -e ts -x 'npx ts-node -P ./server_source/tsconfig.json ./server_source/dev_index.ts'",
+    "dev": "rm -rf *_dist && npx nodemon -w server_source/**/* -e ts -x 'npx ts-node -P ./server_source/tsconfig.json ./server_source/dev_index.ts'",
     "build-server": "npx tsc -p ./server_source/tsconfig.json",
     "build-client": "npx webpack --progress --log-time"
   },
