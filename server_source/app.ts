@@ -7,6 +7,7 @@ import Axios from 'axios';
 import * as KoaServe from 'koa-static';
 import * as KoaMount from 'koa-mount';
 import * as path from 'path';
+import * as KoaSend from 'koa-send';
 
 const app = new Koa();
 const router = new KoaRouter();
@@ -91,6 +92,9 @@ router.get('/graphql', graphqlKoa({
 router.get('/graphiql', graphiqlKoa({
     endpointURL: '/graphql'
 }));
+router.get('/arrange', async (ctx) => {
+    await KoaSend(ctx, 'client_dist/arrange.html');
+});
 
 app.use(KoaBody());
 app.use(router.routes());

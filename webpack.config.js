@@ -9,6 +9,7 @@ module.exports = {
     devtool: '#eval-source-map',
     entry: {
         index: ['./client_source/index.ts'],
+        arrange: ['./client_source/arrange.ts'],
     },
     output: {
         path: path.resolve(__dirname, './client_dist'),
@@ -90,6 +91,13 @@ module.exports = {
         new HtmlWebpackPlugin({
             favicon: './client_source/favicon.ico',
             template: './client_source/index.html',
+            chunks: ['index'],
+        }),
+        new HtmlWebpackPlugin({
+            favicon: './client_source/favicon.ico',
+            template: './client_source/index.html',
+            chunks: ['arrange'],
+            filename: 'arrange.html',
         }),
     ],
     resolve: {
